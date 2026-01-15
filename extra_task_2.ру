@@ -1,0 +1,14 @@
+
+
+def digit_root(num):
+    if type(num) == int and num >= 0 and num <= 10**7:
+        
+        while num >= 10:
+            result = 0     
+            for digit in str(num):
+                result += int(digit) 
+            num = result
+        return num
+    else:
+        print('Некорректный формат!')
+
