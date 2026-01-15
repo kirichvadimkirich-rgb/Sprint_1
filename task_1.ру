@@ -1,0 +1,11 @@
+str_time_values = '1h 45m,360s,25m,30m 120s,2h 60s'
+list_time_values = str_time_values.replace(',', ' ').split()
+sum_minutes = 0
+for time_values in list_time_values:
+    if 'h' in time_values:
+        sum_minutes += (int(time_values[:-1]))*60
+    elif 'm' in time_values:
+        sum_minutes += int(time_values[:-1])
+    elif 's' in time_values:
+        sum_minutes += (int(time_values[:-1]))//60       
+print(sum_minutes)
